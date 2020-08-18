@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
 
-      hello,this antd study
+      <h1>hello,this antd study</h1>
       <br/>
       <Button type="primary">Button</Button>
 
