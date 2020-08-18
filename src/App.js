@@ -12,7 +12,7 @@ function App() {
       <br/>
       <Button type="primary">Button</Button>
 
-      {/* #6. 注释无用代码 */}
+      {/* #6. 注释无用代码  */}
 
       {/*<header className="App-header">*/}
       {/*  <img src={logo} className="App-logo" alt="logo" />*/}
