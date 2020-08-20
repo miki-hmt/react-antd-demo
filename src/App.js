@@ -11,6 +11,8 @@ import React, { useState } from 'react';
 //demo3 #1 引入分页
 import { Button, DatePicker, message, Pagination } from 'antd';
 
+//demo4 #1 引入函数声明式组件方式  必须要加{}，否则会找不到该组件位置
+import {Demo} from './demo';
 
 function App() {
 
@@ -52,7 +54,10 @@ function App() {
         </div>
 
     </div>
+    <br/><br/>
 
+    {/* demo4 #2 引入函数声明式组件方式必须要加{}，否则会找不到该组件位置    */}
+    <Demo/>
 
       {/* #6. 注释无用代码  */}
 
