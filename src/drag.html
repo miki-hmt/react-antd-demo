@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+            #div1, #div2
+            {float:left; width:198px; height:66px; margin:10px;padding:10px;border:1px solid #aaaaaa;}
+        </style>
+        <script type=text/javascript>
+            var source;
+            function allowDrop(ev){
+                console.log("进入allowDrop方法中...");
+                ev.preventDefault();
+                if(ev.target.id!=source){
+                    ev.target.style.border = '2px solid yellow';
+                }
+            }
+
+            function ondragleaveFun(ev) {
+                console.log("进入ondragleaveFun方法中..."+ev.target.id);
+                ev.target.style.border = '1px solid #aaaaaa';
+            }
+            function drag(ev){
+                console.log("进入drag方法中..."+ev.target.id);
+                source = ev.target.id;
+                ev.dataTransfer.setData("Text",ev.target.id);
+            }
+            function drop(ev){
+                console.log("进入drop方法中..."+ev.target.id);
+                ev.preventDefault();
+                ev.target.style.border = '1px solid #aaaaaa';
+                var data=ev.dataTransfer.getData("Text");
+                console.log("获取到的数据："+data);
+                //ev.target.appendChild(document.getElementById(data));
+            }
+
+        </script>
+ </head>
+    <body>
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)" draggable="true" ondragstart="drag(event)" title="1111" ondragleave="ondragleaveFun(event)">
+<!--        <img src="/i/eg_dragdrop_w3school.gif" draggable="true" ondragstart="drag(event)" id="drag1" />-->
+    </div>
+    <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)" draggable="true" ondragstart="drag(event)" title="2222" ondragleave="ondragleaveFun(event)"></div>
+    </body>
+</html>
